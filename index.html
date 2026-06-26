@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>GrowingKids — Pre-Primary & Middle School | Joyful Learning, Strong Foundations</title>
+  <meta name="description" content="GrowingKids is a vibrant pre-primary and middle school nurturing curious minds through play-based learning, modern facilities, and caring educators. Admissions open." />
+  <meta name="keywords" content="GrowingKids, pre-primary school, middle school, kindergarten, play-based learning, school admissions, kids school" />
+  <meta name="author" content="GrowingKids School" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://growingkids.example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GrowingKids — Pre-Primary & Middle School" />
+  <meta property="og:description" content="A joyful place where curious kids grow into confident learners." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://growingkids.example.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GrowingKids — Pre-Primary & Middle School" />
+  <meta name="twitter:description" content="A joyful place where curious kids grow into confident learners." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E" />
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFF8EE',
+            coral: '#FF7A59',
+            sunny: '#FFD56B',
+            teal: '#2EC4B6',
+            mint: '#A7E8BD',
+            navy: '#1F2A44',
+            blush: '#FFD7C9',
+          },
+          fontFamily: {
+            display: ['Fredoka', 'system-ui', 'sans-serif'],
+            body: ['Nunito', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Fredoka (display) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JSON-LD: School schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "GrowingKids",
+    "description": "Pre-Primary and Middle School with play-based and inquiry-driven learning.",
+    "url": "https://growingkids.com/",
+    "telephone": "+91-8109695832",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lohamandi",
+      "addressLocality": "Hazira",
+      "addressRegion": "Madhya Pradesh, Gwalior",
+      "postalCode": "475003",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+</head>
+
+<body class="font-body bg-cream text-navy antialiased">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 group" data-testid="logo-link">
+        <!-- <span class="w-10 h-10 rounded-2xl bg-coral grid place-items-center text-white font-display font-bold text-xl shadow-lg shadow-coral/30 group-hover:rotate-6 transition">G</span> -->
+        <img src="images/growing-kids-school-logo.png" width="100" height="100" />
+        <!-- <span class="font-display font-bold text-xl tracking-tight">Growing<span class="text-coral">Kids</span></span> -->
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden lg:flex items-center gap-8 font-semibold text-[15px]">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#programs">Programs</a></li>
+        <li><a class="nav-link" href="#facilities">Facilities</a></li>
+        <li><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li><a class="nav-link" href="#events">Events</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#admission" class="hidden lg:inline-flex items-center gap-2 bg-navy text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-coral transition shadow-md" data-testid="apply-cta-desktop">
+        Apply Now
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="lg:hidden w-11 h-11 rounded-full bg-navy text-white grid place-items-center" aria-label="Open menu" data-testid="mobile-menu-button">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </nav>
+
+  </header>
+
+  <!-- Mobile left-side drawer (outside header so it overlays full page) -->
+  <!-- Backdrop -->
+  <div id="drawer-backdrop" class="lg:hidden fixed inset-0 z-40 bg-navy/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- Drawer panel -->
+  <div id="mobile-drawer"
+       class="lg:hidden fixed top-0 left-0 z-50 h-full w-72 bg-white shadow-2xl flex flex-col
+              -translate-x-full transition-transform duration-300 ease-in-out">
+
+    <!-- Drawer header -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-navy/10">
+      <a href="#home" class="flex items-center gap-2" id="drawer-logo">
+        <!-- <span class="w-9 h-9 rounded-xl bg-coral grid place-items-center text-white font-display font-bold text-lg shadow-md">G</span> -->
+        <!-- <span class="font-display font-bold text-lg tracking-tight">Growing<span class="text-coral">Kids</span></span> -->
+        <img src="images/growing-kids-school-logo.png" width="100" height="100" />
+      </a>
+      <button id="mobile-drawer-close" aria-label="Close menu"
+              class="w-9 h-9 rounded-full bg-navy/5 hover:bg-navy/10 grid place-items-center transition">
+        <i data-lucide="x" class="w-5 h-5 text-navy"></i>
+      </button>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="flex-1 overflow-y-auto px-4 py-6">
+      <ul class="space-y-1 font-semibold text-[15px]">
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#home"><i data-lucide="home" class="w-4 h-4 text-coral"></i>Home</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#about"><i data-lucide="info" class="w-4 h-4 text-teal"></i>About</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#programs"><i data-lucide="book-open" class="w-4 h-4 text-coral"></i>Programs</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#facilities"><i data-lucide="building-2" class="w-4 h-4 text-teal"></i>Facilities</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#gallery"><i data-lucide="image" class="w-4 h-4 text-coral"></i>Gallery</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#events"><i data-lucide="calendar" class="w-4 h-4 text-teal"></i>Events</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#testimonials"><i data-lucide="message-square" class="w-4 h-4 text-coral"></i>Testimonials</a></li>
+        <li><a class="drawer-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-coral/8 transition" href="#contact"><i data-lucide="map-pin" class="w-4 h-4 text-teal"></i>Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA at bottom -->
+    <div class="px-6 pb-8 pt-2 border-t border-navy/10">
+      <a href="#admission" id="drawer-apply"
+         class="flex items-center justify-center gap-2 bg-coral hover:bg-coral/90 text-white font-bold px-6 py-3.5 rounded-full shadow-lg shadow-coral/30 transition w-full">
+        Apply Now
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Drawer logic runs after script.js via window.load so it overrides the old hidden-toggle -->
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+    <!-- decorative blobs -->
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center relative">
+      <div class="lg:col-span-7 reveal">
+        <span class="inline-flex items-center gap-2 bg-white border border-navy/10 px-4 py-1.5 rounded-full text-sm font-semibold shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+          Admissions open for 2026–27
+        </span>
+
+        <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mt-6 tracking-tight">
+          Where curious kids
+          <span class="relative inline-block">
+            <span class="relative z-10">grow</span>
+            <svg class="absolute left-0 -bottom-2 w-full" viewBox="0 0 200 14" fill="none">
+              <path d="M2 9C40 2 100 2 198 9" stroke="#FFD56B" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          into confident learners.
+        </h1>
+
+        <p class="mt-7 text-lg sm:text-xl text-navy/70 max-w-xl">
+          A joyful pre-primary and middle school built around play, inquiry and care. We help children discover their strengths through hands-on learning and a nurturing community.
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#admission" class="inline-flex items-center gap-2 bg-coral hover:bg-coral/90 text-white font-bold px-7 py-4 rounded-full shadow-lg shadow-coral/30 transition" data-testid="hero-apply-btn">
+            Enquire for admission
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#about" class="inline-flex items-center gap-2 bg-white hover:bg-cream border border-navy/15 font-bold px-7 py-4 rounded-full transition" data-testid="hero-tour-btn">
+            <i data-lucide="play-circle" class="w-5 h-5 text-teal"></i>
+            Take a campus tour
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
+          <div>
+            <div class="font-display font-bold text-3xl">15+</div>
+            <div class="text-sm text-navy/60 font-semibold">Years of joyful learning</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl">1:8</div>
+            <div class="text-sm text-navy/60 font-semibold">Teacher to child ratio</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl">600+</div>
+            <div class="text-sm text-navy/60 font-semibold">Happy families</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== HERO IMAGE CAROUSEL ===== -->
+      <div class="lg:col-span-5 relative reveal">
+        <div class="relative">
+          <!-- Decorative background tile -->
+          <div class="absolute -inset-6 bg-sunny rounded-[3rem] rotate-3"></div>
+
+          <!-- Carousel wrapper -->
+          <div id="hero-carousel" class="relative rounded-[3rem] w-full h-[520px] overflow-hidden shadow-xl">
+
+            <!-- Slides -->
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-100">
+              <img src="images/gk-image1.png"
+                   alt="Happy children learning at GrowingKids school"
+                   class="w-full h-full object-cover" />
+              <div class="carousel-caption">
+                <span>🎨 Creative Learning</span>
+              </div>
+            </div>
+
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="images/gk-image3.png"
+                   alt="Science exploration at GrowingKids"
+                   class="w-full h-full object-cover" />
+              <div class="carousel-caption">
+                <span>🔬 Science &amp; Discovery</span>
+              </div>
+            </div>
+
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=900&q=80"
+                   alt="Children reading together"
+                   class="w-full h-full object-cover" />
+              <div class="carousel-caption">
+                <span>📚 Love for Reading</span>
+              </div>
+            </div>
+
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="images/gk-image2.png"
+                   alt="Outdoor play and sports"
+                   class="w-full h-full object-cover" />
+              <div class="carousel-caption">
+                <span>🌿 Outdoor &amp; Play Time</span>
+              </div>
+            </div>
+
+            <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-0">
+              <img src="https://images.unsplash.com/photo-1597392582469-a697322d5c16?w=900&q=80"
+                   alt="Arts and crafts class"
+                   class="w-full h-full object-cover" />
+              <div class="carousel-caption">
+                <span>✂️ Arts &amp; Crafts</span>
+              </div>
+            </div>
+
+            <!-- Prev / Next arrows -->
+            <button id="carousel-prev" aria-label="Previous slide"
+              class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition">
+              <i data-lucide="chevron-left" class="w-5 h-5 text-navy"></i>
+            </button>
+            <button id="carousel-next" aria-label="Next slide"
+              class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/80 hover:bg-white shadow-md flex items-center justify-center transition">
+              <i data-lucide="chevron-right" class="w-5 h-5 text-navy"></i>
+            </button>
+
+            <!-- Dot indicators -->
+            <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+              <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white transition" aria-label="Slide 1"></button>
+              <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition" aria-label="Slide 2"></button>
+              <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition" aria-label="Slide 3"></button>
+              <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition" aria-label="Slide 4"></button>
+              <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 transition" aria-label="Slide 5"></button>
+            </div>
+          </div><!-- /carousel -->
+
+          <!-- Floating badge – bottom left -->
+          <div class="absolute -left-6 bottom-10 bg-white px-5 py-4 rounded-2xl shadow-xl flex items-center gap-3 max-w-[230px] z-10">
+            <div class="w-12 h-12 rounded-xl bg-mint grid place-items-center">
+              <i data-lucide="sparkles" class="w-6 h-6 text-teal"></i>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Play-based curriculum</div>
+              <div class="text-xs text-navy/60">Aligned with NEP 2020</div>
+            </div>
+          </div>
+
+          <!-- Floating badge – top right -->
+          <div class="absolute -right-4 top-10 bg-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 z-10">
+            <div class="w-10 h-10 rounded-full bg-coral/15 grid place-items-center">
+              <i data-lucide="heart" class="w-5 h-5 text-coral"></i>
+            </div>
+            <div class="text-sm font-bold">Caring teachers</div>
+          </div>
+        </div>
+      </div><!-- /hero carousel column -->
+
+      <!-- Carousel caption style & script -->
+      <style>
+        .carousel-caption {
+          position: absolute;
+          bottom: 52px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(31,42,68,0.72);
+          backdrop-filter: blur(6px);
+          color: #fff;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 700;
+          font-size: 0.85rem;
+          padding: 6px 18px;
+          border-radius: 999px;
+          white-space: nowrap;
+          z-index: 15;
+          pointer-events: none;
+        }
+      </style>
+
+      <script>
+        (function () {
+          const slides = document.querySelectorAll('.hero-slide');
+          const dots   = document.querySelectorAll('.carousel-dot');
+          let current  = 0;
+          let timer;
+
+          function goTo(n) {
+            slides[current].style.opacity = '0';
+            dots[current].classList.replace('bg-white', 'bg-white/40');
+            current = (n + slides.length) % slides.length;
+            slides[current].style.opacity = '1';
+            dots[current].classList.replace('bg-white/40', 'bg-white');
+          }
+
+          function startAuto() {
+            timer = setInterval(() => goTo(current + 1), 4000);
+          }
+
+          function resetAuto() {
+            clearInterval(timer);
+            startAuto();
+          }
+
+          document.getElementById('carousel-prev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+          document.getElementById('carousel-next').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+          dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetAuto(); }));
+
+          startAuto();
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <img src="images/school-front.jpg" alt="Science exploration" class="w-full object-cover" />
+        <!-- <div class="grid grid-cols-2 gap-5">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="Science exploration" class="rounded-3xl h-72 w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt="Children reading together" class="rounded-3xl h-72 w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1597392582469-a697322d5c16?w=600&q=80" alt="Art and crafts class" class="rounded-3xl h-72 w-full object-cover mt-10" />
+          <img src="https://images.unsplash.com/photo-1581726707445-75cbe4efc586?w=600&q=80" alt="Outdoor play" class="rounded-3xl h-72 w-full object-cover -mt-6" />
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&q=80" alt="Science exploration" class="rounded-3xl h-72 w-full object-cover" />
+        </div> -->
+      </div>
+
+      <div class="reveal">
+        <span class="kicker">About our school</span>
+        <h2 class="section-title mt-3">A school that feels like home — only with more wonder.</h2>
+        <p class="mt-5 text-lg text-navy/70">
+          GrowingKids was founded on a simple belief: every child carries a spark.
+          Our pre-primary and middle school program is designed to keep that spark alive
+          through joyful exploration, strong academic foundations, and genuine care.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-5">
+          <div class="feature-pill">
+            <i data-lucide="book-open" class="w-5 h-5 text-coral"></i>
+            <span>Inquiry-driven curriculum</span>
+          </div>
+          <div class="feature-pill">
+            <i data-lucide="palette" class="w-5 h-5 text-teal"></i>
+            <span>Arts &amp; performance</span>
+          </div>
+          <div class="feature-pill">
+            <i data-lucide="leaf" class="w-5 h-5 text-teal"></i>
+            <span>Outdoor &amp; nature time</span>
+          </div>
+          <div class="feature-pill">
+            <i data-lucide="users" class="w-5 h-5 text-coral"></i>
+            <span>Small class sizes</span>
+          </div>
+        </div>
+
+        <a href="#programs" class="inline-flex items-center gap-2 mt-9 font-bold text-coral hover:underline">
+          Explore our programs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRINCIPAL'S MESSAGE ===================== -->
+  <section id="principal" class="py-20 lg:py-28 bg-blush/40 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-coral rounded-[2.5rem] -rotate-3"></div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80" alt="Principal Mrs. Anjali Sharma" class="relative w-full h-[460px] object-cover rounded-[2.5rem]" />
+        </div>
+      </div>
+      <div class="lg:col-span-7 reveal">
+        <span class="kicker">From the principal's desk</span>
+        <h2 class="section-title mt-3">"A child's first school should feel like a warm hug."</h2>
+        <p class="mt-6 text-lg text-navy/75 leading-relaxed">
+          At GrowingKids, we don't just teach lessons — we listen, observe and walk alongside each child.
+          Our teachers are trained to notice the quiet wonder in every classroom and to turn it into a moment of learning.
+          We believe academic strength and emotional well-being grow side by side.
+        </p>
+        <p class="mt-4 text-lg text-navy/75 leading-relaxed">
+          When you choose our school, you're choosing a community that celebrates curiosity, kindness and courage in equal measure.
+        </p>
+        <div class="mt-7 flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-coral text-white font-display font-bold grid place-items-center text-xl">AS</div>
+          <div>
+            <div class="font-display font-bold text-lg">Mrs. Anjali Sharma</div>
+            <div class="text-sm text-navy/60 font-semibold">Principal, GrowingKids</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ACADEMIC PROGRAMS ===================== -->
+  <section id="programs" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="kicker">Academic programs</span>
+        <h2 class="section-title mt-3">A path that grows with your child</h2>
+        <p class="mt-4 text-lg text-navy/70">From first crayon strokes to first science fair — every age has its own joyful curriculum.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="program-card bg-sunny/40">
+          <div class="w-14 h-14 rounded-2xl bg-sunny grid place-items-center mb-5">
+            <i data-lucide="baby" class="w-7 h-7 text-navy"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">Ages 2 – 4</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Playgroup &amp; Nursery</h3>
+          <p class="mt-3 text-navy/70">Sensorial play, music, story-time and gentle routines that build confidence and curiosity.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Phonics &amp; pre-writing</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Movement &amp; music</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Free play zones</li>
+          </ul>
+        </article>
+
+        <article class="program-card bg-mint/50">
+          <div class="w-14 h-14 rounded-2xl bg-mint grid place-items-center mb-5">
+            <i data-lucide="puzzle" class="w-7 h-7 text-navy"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">Ages 4 – 6</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Kindergarten</h3>
+          <p class="mt-3 text-navy/70">Inquiry-led learning blending literacy, numeracy and creative arts in playful themes.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Theme-based learning</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Early STEM</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Storytelling &amp; drama</li>
+          </ul>
+        </article>
+
+        <article class="program-card bg-blush">
+          <div class="w-14 h-14 rounded-2xl bg-coral grid place-items-center mb-5">
+            <i data-lucide="graduation-cap" class="w-7 h-7 text-white"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">Grades 1 – 5</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Primary School</h3>
+          <p class="mt-3 text-navy/70">Strong academic foundations through projects, reading clubs and hands-on exploration.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> English, Maths, EVS</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Coding fundamentals</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Library &amp; reading club</li>
+          </ul>
+        </article>
+
+        <article class="program-card bg-teal/15">
+          <div class="w-14 h-14 rounded-2xl bg-teal grid place-items-center mb-5">
+            <i data-lucide="flask-conical" class="w-7 h-7 text-white"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">Grades 6 – 8</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Middle School</h3>
+          <p class="mt-3 text-navy/70">A curriculum that challenges and inspires — science labs, debate club and leadership programs.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Science &amp; Math labs</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Public speaking</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-teal mt-0.5"></i> Sports &amp; leadership</li>
+          </ul>
+        </article>
+
+        <article class="program-card bg-cream border border-navy/5">
+          <div class="w-14 h-14 rounded-2xl bg-navy grid place-items-center mb-5">
+            <i data-lucide="music" class="w-7 h-7 text-sunny"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">After school</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Co-curricular Clubs</h3>
+          <p class="mt-3 text-navy/70">Music, dance, art, robotics and chess clubs — guided by passionate mentors.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> 12+ activity clubs</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Annual showcase</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Inter-school events</li>
+          </ul>
+        </article>
+
+        <article class="program-card bg-sunny/30">
+          <div class="w-14 h-14 rounded-2xl bg-sunny grid place-items-center mb-5">
+            <i data-lucide="heart-handshake" class="w-7 h-7 text-navy"></i>
+          </div>
+          <div class="text-xs font-bold uppercase tracking-wider text-navy/60">Always</div>
+          <h3 class="font-display font-bold text-2xl mt-1">Values &amp; Wellbeing</h3>
+          <p class="mt-3 text-navy/70">Mindfulness, empathy circles and life-skills woven through every grade.</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Mindfulness sessions</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Counsellor on campus</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-coral mt-0.5"></i> Buddy program</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FACILITIES ===================== -->
+  <section id="facilities" class="py-20 lg:py-28 bg-navy text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-end">
+        <div class="lg:col-span-7 reveal">
+          <span class="kicker text-sunny">Facilities &amp; Infrastructure</span>
+          <h2 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight mt-3">Spaces designed<br/>for tiny humans <span class="text-sunny">to thrive</span>.</h2>
+        </div>
+        <div class="lg:col-span-5 text-white/70 text-lg reveal">
+          From sun-lit classrooms to a real-grass play field, every corner of our campus is built around safety, exploration and joy.
+        </div>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="facility">
+          <i data-lucide="library" class="w-7 h-7 text-sunny"></i>
+          <h3>Library &amp; Reading Nooks</h3>
+          <p>3,000+ titles, cosy reading corners and weekly story-time circles.</p>
+        </div>
+        <div class="facility">
+          <i data-lucide="microscope" class="w-7 h-7 text-mint"></i>
+          <h3>Science &amp; Math Labs</h3>
+          <p>Hands-on labs with safe, age-appropriate equipment for every grade.</p>
+        </div>
+        <div class="facility">
+          <i data-lucide="laptop" class="w-7 h-7 text-coral"></i>
+          <h3>Computer &amp; Robotics</h3>
+          <p>Coding stations and beginner robotics kits for tomorrow's makers.</p>
+        </div>
+        <div class="facility">
+          <i data-lucide="trees" class="w-7 h-7 text-mint"></i>
+          <h3>Outdoor Play Field</h3>
+          <p>Real grass, sand pits and shaded play structures — safety-certified.</p>
+        </div>
+        <div class="facility">
+          <i data-lucide="utensils" class="w-7 h-7 text-sunny"></i>
+          <h3>Healthy Cafeteria</h3>
+          <p>Freshly prepared meals supervised by a nutritionist.</p>
+        </div>
+        <div class="facility">
+          <i data-lucide="shield-check" class="w-7 h-7 text-coral"></i>
+          <h3>Safety &amp; Transport</h3>
+          <p>CCTV-monitored campus, GPS-tracked buses and trained attendants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="kicker">Gallery</span>
+        <h2 class="section-title mt-3">A peek into a day at GrowingKids</h2>
+        <p class="mt-4 text-lg text-navy/70">Real moments from our classrooms, playgrounds and events.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal">
+        <video width="640" height="360" class="gallery-img row-span-2 h-full" controls>
+          <source src="images/gk-celebration1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- <img class="gallery-img row-span-2 h-full" src="images/gk-image4.png?w=700&q=80" alt="Children painting" /> -->
+        <img class="gallery-img" src="images/gk-image5.png?w=600&q=80" alt="Outdoor learning" />
+        <img class="gallery-img" src="images/gk-image6.png?w=600&q=80" alt="Science class" />
+        <!-- <img class="gallery-img row-span-2 h-full" src="images/gk-image7.png?w=700&q=80" alt="Reading time" /> -->
+
+        <video width="640" height="360" class="gallery-img row-span-2 h-full" controls>
+          <source src="images/gk-celebration2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <img class="gallery-img" src="images/gk-image1.png?w=600&q=80" alt="Sports day" />
+        <img class="gallery-img" src="images/gk-image2.png?w=600&q=80" alt="Music class" />
+        <img class="gallery-img" src="images/gk-image7.png?w=600&q=80" alt="Art workshop" />
+        <img class="gallery-img" src="images/gk-image3.png?w=600&q=80" alt="Group activity" />
+        <img class="gallery-img" src="images/gk-image4.png?w=600&q=80" alt="Storytime" />
+        
+        <img class="gallery-img" src="images/school-front.jpg?w=600&q=80" alt="Math activity" />
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 hidden bg-navy/90 z-[60] items-center justify-center p-6">
+      <button id="lightbox-close" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white grid place-items-center" aria-label="Close">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-[90vw] rounded-2xl shadow-2xl" />
+    </div>
+  </section>
+
+  <!-- ===================== EVENTS ===================== -->
+  <section id="events" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+        <div>
+          <span class="kicker">Events &amp; Announcements</span>
+          <h2 class="section-title mt-3">What's happening this season</h2>
+        </div>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 font-bold text-coral hover:underline">View full calendar <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="event-card">
+          <div class="event-date"><span class="day">14</span><span class="month">Jan</span></div>
+          <span class="tag bg-coral/15 text-coral">Annual Day</span>
+          <h3 class="font-display font-bold text-2xl mt-3">Spark — Annual Showcase</h3>
+          <p class="mt-2 text-navy/70">Music, dance and drama performances by every grade. Families welcome.</p>
+          <a href="#contact" class="mt-5 inline-flex items-center gap-2 font-bold text-navy">RSVP <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        </article>
+        <article class="event-card">
+          <div class="event-date"><span class="day">02</span><span class="month">Feb</span></div>
+          <span class="tag bg-teal/15 text-teal">Open House</span>
+          <h3 class="font-display font-bold text-2xl mt-3">Saturday Campus Tour</h3>
+          <p class="mt-2 text-navy/70">Visit our classrooms, meet teachers and see a live class in action.</p>
+          <a href="#admission" class="mt-5 inline-flex items-center gap-2 font-bold text-navy">Book a slot <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        </article>
+        <article class="event-card">
+          <div class="event-date"><span class="day">28</span><span class="month">Feb</span></div>
+          <span class="tag bg-sunny text-navy">Workshop</span>
+          <h3 class="font-display font-bold text-2xl mt-3">Parent-Child Art Workshop</h3>
+          <p class="mt-2 text-navy/70">A fun, messy afternoon of painting and craft for ages 3 – 8.</p>
+          <a href="#contact" class="mt-5 inline-flex items-center gap-2 font-bold text-navy">Register <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+        </article>
+      </div>
+
+      <!-- Announcements -->
+      <div class="mt-14 bg-cream rounded-3xl p-6 sm:p-8 border border-navy/5">
+        <div class="flex items-center gap-3 mb-5">
+          <i data-lucide="megaphone" class="w-6 h-6 text-coral"></i>
+          <h3 class="font-display font-bold text-2xl">Announcements</h3>
+        </div>
+        <ul class="space-y-3 text-navy/80">
+          <li class="flex gap-3"><span class="w-2 h-2 rounded-full bg-coral mt-2 shrink-0"></span> Admissions open for 2026–27 — early-bird forms close on 15 Feb.</li>
+          <li class="flex gap-3"><span class="w-2 h-2 rounded-full bg-teal mt-2 shrink-0"></span> Republic Day celebrations on 26 Jan, parents invited from 8:30 AM.</li>
+          <li class="flex gap-3"><span class="w-2 h-2 rounded-full bg-sunny mt-2 shrink-0"></span> School re-opens on 1st July after summer break.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section id="testimonials" class="py-20 lg:py-28 bg-mint/30">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="kicker">Testimonials</span>
+        <h2 class="section-title mt-3">Loved by parents, adored by kids</h2>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <figure class="testimonial">
+          <i data-lucide="quote" class="w-8 h-8 text-coral"></i>
+          <blockquote class="mt-4 text-navy/80 text-lg">"My daughter wakes up excited for school. The teachers know her so well — it's like an extended family."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="Priya M." class="w-12 h-12 rounded-full object-cover"/>
+            <div>
+              <div class="font-bold">Priya M.</div>
+              <div class="text-sm text-navy/60">Parent of Aanya, KG-2</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <i data-lucide="quote" class="w-8 h-8 text-teal"></i>
+          <blockquote class="mt-4 text-navy/80 text-lg">"The balance between academics and play is incredible. My son's confidence has grown so much in just one year."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="Rahul D." class="w-12 h-12 rounded-full object-cover"/>
+            <div>
+              <div class="font-bold">Rahul D.</div>
+              <div class="text-sm text-navy/60">Parent of Vihaan, Grade 3</div>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="testimonial">
+          <i data-lucide="quote" class="w-8 h-8 text-coral"></i>
+          <blockquote class="mt-4 text-navy/80 text-lg">"The campus is beautiful, the teachers are warm, and communication with parents is constant. Couldn't ask for more."</blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&q=80" alt="Sneha R." class="w-12 h-12 rounded-full object-cover"/>
+            <div>
+              <div class="font-bold">Sneha R.</div>
+              <div class="text-sm text-navy/60">Parent of Ira, Grade 6</div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ADMISSION ENQUIRY ===================== -->
+  <section id="admission" class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <span class="kicker">Admission Enquiry</span>
+        <h2 class="section-title mt-3">Let's start your child's journey.</h2>
+        <p class="mt-5 text-lg text-navy/70">
+          Fill in the form and we'll send your enquiry directly to our admissions team on WhatsApp.
+          We typically respond within a few hours.
+        </p>
+
+        <ul class="mt-8 space-y-4 text-navy/80">
+          <li class="flex gap-3"><i data-lucide="phone" class="w-5 h-5 text-coral mt-1"></i><span>+91-8109695832 (Mon – Sat, 9 AM – 5 PM)</span></li>
+          <li class="flex gap-3"><i data-lucide="mail" class="w-5 h-5 text-coral mt-1"></i><span>growingkids51@yahoo.com</span></li>
+          <li class="flex gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-coral mt-1"></i><span>Lohamandi, Gwalior, Madhya Pradesh, India-475003</span></li>
+        </ul>
+      </div>
+
+      <form id="enquiry-form" class="bg-white border border-navy/5 rounded-3xl p-7 sm:p-9 shadow-xl reveal" data-testid="admission-form">
+        <h3 class="font-display font-bold text-2xl mb-6">Quick enquiry</h3>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="form-field">
+            <span>Parent's name</span>
+            <input type="text" name="parentName" required data-testid="form-parent-name" />
+          </label>
+          <label class="form-field">
+            <span>Phone</span>
+            <input type="tel" name="phone" required pattern="[0-9+\-\s]{7,15}" data-testid="form-phone" />
+          </label>
+          <label class="form-field sm:col-span-2">
+            <span>Email</span>
+            <input type="email" name="email" required data-testid="form-email" />
+          </label>
+          <label class="form-field">
+            <span>Child's name</span>
+            <input type="text" name="childName" required data-testid="form-child-name" />
+          </label>
+          <label class="form-field">
+            <span>Grade applying for</span>
+            <select name="grade" required data-testid="form-grade">
+              <option value="">Select grade</option>
+              <option>Playgroup</option>
+              <option>Nursery</option>
+              <option>KG-1</option>
+              <option>KG-2</option>
+              <option>Grade 1</option>
+              <option>Grade 2</option>
+              <option>Grade 3</option>
+              <option>Grade 4</option>
+              <option>Grade 5</option>
+              <option>Grade 6</option>
+              <option>Grade 7</option>
+              <option>Grade 8</option>
+            </select>
+          </label>
+          <label class="form-field sm:col-span-2">
+            <span>Message (optional)</span>
+            <textarea name="message" rows="3" data-testid="form-message"></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb557] text-white font-bold px-7 py-4 rounded-full shadow-lg transition" data-testid="form-submit-btn">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Send enquiry on WhatsApp
+        </button>
+        <p class="mt-3 text-xs text-navy/55 text-center">Clicking submit opens WhatsApp with your enquiry pre-filled.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT & MAP ===================== -->
+  <section id="contact" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-10 items-stretch">
+      <div class="reveal">
+        <span class="kicker">Contact &amp; Location</span>
+        <h2 class="section-title mt-3">Come visit. We'd love to meet you.</h2>
+        <p class="mt-5 text-lg text-navy/70">Walk-ins welcome on Saturdays between 10 AM – 1 PM. Or schedule a private tour any weekday.</p>
+
+        <div class="mt-9 space-y-5">
+          <div class="contact-item">
+            <div class="icon-wrap bg-coral/15 text-coral"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+            <div>
+              <div class="font-bold">Address</div>
+              <div class="text-navy/70">Lohamandi, Gwalior, Madhya Pradesh, <br/>India-475003</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon-wrap bg-teal/15 text-teal"><i data-lucide="phone" class="w-5 h-5"></i></div>
+            <div>
+              <div class="font-bold">Phone</div>
+              <div class="text-navy/70">+91-8109695832</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon-wrap bg-sunny text-navy"><i data-lucide="mail" class="w-5 h-5"></i></div>
+            <div>
+              <div class="font-bold">Email</div>
+              <div class="text-navy/70">growingkids51@yahoo.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon-wrap bg-mint text-navy"><i data-lucide="clock" class="w-5 h-5"></i></div>
+            <div>
+              <div class="font-bold">Hours</div>
+              <div class="text-navy/70">Mon – Fri · 8:30 AM – 4:30 PM<br/>Sat · 10 AM – 1 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal rounded-3xl overflow-hidden border border-navy/10 min-h-[420px]">
+        <iframe
+          title="GrowingKids School location"
+          src="https://www.google.com/maps?q=Growing+Kids+School+Gwalior&output=embed"
+          width="100%" height="100%" style="border:0; min-height: 420px;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-navy text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <a href="#home" class="flex items-center gap-2">
+          <!-- <span class="w-10 h-10 rounded-2xl bg-coral grid place-items-center text-white font-display font-bold text-xl">G</span> -->
+          <!-- <span class="font-display font-bold text-xl">Growing<span class="text-sunny">Kids</span></span> -->
+          <img src="images/growing-kids-school-logo.png" width="100" height="100" class="bg-white shadow-[0px_0px_24px_0px] rounded-[34px] p-0" />
+        </a>
+        <p class="mt-5 text-white/70 max-w-md">A pre-primary &amp; middle school where curiosity is celebrated and every child is seen, heard and cherished.</p>
+        <div class="mt-6 flex gap-3">
+          <!-- <a href="#" aria-label="Instagram" class="social-icon"><i data-lucide="instagram" class="w-5 h-5"></i></a> -->
+          <a href="#" aria-label="Instagram" class="social-icon"><img src="images/facebook.svg" alt="Company Logo" /></a>
+          <!-- <a href="#" aria-label="Facebook" class="social-icon"><i data-lucide="facebook" class="w-5 h-5"></i></a> -->
+          <a href="#" aria-label="Facebook" class="social-icon"><img src="images/instagram.svg" alt="Company Logo" /></a>
+          <!-- <a href="#" aria-label="YouTube" class="social-icon"><i data-lucide="youtube" class="w-5 h-5"></i></a> -->
+        </div>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-lg mb-4">Explore</h4>
+        <ul class="space-y-2 text-white/70">
+          <li><a href="#about" class="hover:text-sunny">About</a></li>
+          <li><a href="#programs" class="hover:text-sunny">Programs</a></li>
+          <li><a href="#facilities" class="hover:text-sunny">Facilities</a></li>
+          <li><a href="#gallery" class="hover:text-sunny">Gallery</a></li>
+          <li><a href="#events" class="hover:text-sunny">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-lg mb-4">Reach us</h4>
+        <ul class="space-y-2 text-white/70">
+          <li>+91-8109695832</li>
+          <li>growingkids51@yahoo.com</li>
+          <li>Lohamandi, Gwalior, Madhya Pradesh, India-475003</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/60 text-sm">
+      <div>© <span id="year"></span> GrowingKids School. All rights reserved.</div>
+      <div>Crafted with care for curious kids.</div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING WHATSAPP ===================== -->
+  <a id="wa-float" href="https://wa.me/918109695832?text=Hi%20GrowingKids%2C%20I%27d%20like%20to%20know%20more%20about%20admissions."
+     target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb557] text-white font-bold px-5 py-3 rounded-full shadow-2xl transition"
+     data-testid="whatsapp-float">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <!-- <span class="hidden sm:inline">Chat on WhatsApp</span> -->
+  </a>
+
+  <script src="js/script.js"></script>
+  <script>
+    /**
+     * Runs AFTER script.js so we can safely override its old mobile-menu logic
+     * and re-init Lucide so footer + drawer icons all render.
+     */
+    window.addEventListener('load', function () {
+
+      /* 1. Re-run Lucide so every icon in the page is rendered */
+      if (window.lucide) lucide.createIcons();
+
+      const btn      = document.getElementById('mobile-menu-btn');
+      const drawer   = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const closeBtn = document.getElementById('mobile-drawer-close');
+
+      if (!btn || !drawer) return;
+
+      /* 2. Remove the old listener script.js attached by cloning the button */
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+
+      /* 3. Drawer helpers */
+      function openDrawer() {
+        drawer.classList.remove('hidden', '-translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100');
+        document.body.style.overflow = 'hidden';
+        /* Re-run Lucide in case drawer icons weren't visible on first scan */
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function closeDrawer() {
+        drawer.classList.add('-translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        backdrop.classList.remove('opacity-100');
+        document.body.style.overflow = '';
+      }
+
+      newBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('.drawer-link, #drawer-apply, #drawer-logo')
+            .forEach(l => l.addEventListener('click', closeDrawer));
+    });
+  </script>
+</body>
+</html>
